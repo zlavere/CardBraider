@@ -15,6 +15,9 @@
 #include <string>
 using namespace std;
 
+#include "controller/BaseballCardInputController.h"
+using namespace controller;
+
 namespace view
 {
 
@@ -37,6 +40,7 @@ private:
     vector<string> sortingGroup = {"Name", "Year", "Cond."};
     vector<string> sortingTypes = {"Ascending", "Descending"};
     string* radioSortingLabels[TOTAL_SORTING_METHODS];
+    BaseballCardInputController inputController;
 
     Fl_Output *sortingOutputLabel;
     Fl_Group *sortingRadioGroup;
@@ -71,6 +75,7 @@ public:
     static void cbSave(Fl_Widget* widget, void* data);
     const string promptUserForFilename(int type, const string& title);
     const string getFilename() const;
+
 
     static void cbAddCard(Fl_Widget* widget, void* data);
     static void cbDeleteCard(Fl_Widget* widget, void* data);

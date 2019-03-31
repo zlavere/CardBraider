@@ -1,16 +1,8 @@
 # depslib dependency file v1.0
-1553006935 source:/home/csuser/Documents/A3/CardBraider/Utils/Utils.cpp
-	"Utils.h"
-	<algorithm>
-	<sstream>
-
-1553005593 /home/csuser/Documents/A3/CardBraider/Utils/Utils.h
-	<string>
-
-1553001792 source:/home/csuser/Documents/A3/CardBraider/main.cpp
+1553986979 source:/home/zach/ssd/CardBraider/CardBraider/main.cpp
 	"BaseballCardCollectionWindow.h"
 
-1553007452 /home/csuser/Documents/A3/CardBraider/View/BaseballCardCollectionWindow.h
+1553995452 /home/zach/ssd/CardBraider/CardBraider/View/BaseballCardCollectionWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -21,29 +13,38 @@
 	<FL/Fl_Button.H>
 	<vector>
 	<string>
+	"controller/BaseballCardInputController.h"
 
-1553006287 source:/home/csuser/Documents/A3/CardBraider/Model/BaseballCard.cpp
+1553455815 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.cpp
 	"BaseballCard.h"
 
-1553006891 /home/csuser/Documents/A3/CardBraider/Model/BaseballCard.h
+1553993381 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.h
 	<string>
 
-1553007203 source:/home/csuser/Documents/A3/CardBraider/View/AddBaseballCardWindow.cpp
+1553006935 source:/home/zach/ssd/CardBraider/CardBraider/Utils/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1553005593 /home/zach/ssd/CardBraider/CardBraider/Utils/Utils.h
+	<string>
+
+1553454526 source:/home/zach/ssd/CardBraider/CardBraider/View/AddBaseballCardWindow.cpp
 	"AddBaseballCardWindow.h"
 	"Utils.h"
 	<Fl/fl_ask.H>
 	<sstream>
 
-1553007422 /home/csuser/Documents/A3/CardBraider/View/AddBaseballCardWindow.h
+1553007422 /home/zach/ssd/CardBraider/CardBraider/View/AddBaseballCardWindow.h
 	"OKCancelWindow.h"
 	"BaseballCard.h"
 	<Fl/Fl_Input.H>
 
-1553007504 /home/csuser/Documents/A3/CardBraider/View/OKCancelWindow.h
+1553007504 /home/zach/ssd/CardBraider/CardBraider/View/OKCancelWindow.h
 	<Fl/Fl_Window.H>
 	<Fl/Fl_Button.H>
 
-1553007287 source:/home/csuser/Documents/A3/CardBraider/View/BaseballCardCollectionWindow.cpp
+1553995861 source:/home/zach/ssd/CardBraider/CardBraider/View/BaseballCardCollectionWindow.cpp
 	"BaseballCardCollectionWindow.h"
 	"DeleteBaseballCardWindow.h"
 	"AddBaseballCardWindow.h"
@@ -52,15 +53,50 @@
 	<Fl/Fl_File_Chooser.H>
 	<iostream>
 
-1553007493 /home/csuser/Documents/A3/CardBraider/View/DeleteBaseballCardWindow.h
+1553007493 /home/zach/ssd/CardBraider/CardBraider/View/DeleteBaseballCardWindow.h
 	"OKCancelWindow.h"
 	<Fl/Fl_Input.H>
 	<string>
 
-1553007346 source:/home/csuser/Documents/A3/CardBraider/View/DeleteBaseballCardWindow.cpp
+1553986978 source:/home/zach/ssd/CardBraider/CardBraider/View/DeleteBaseballCardWindow.cpp
 	"DeleteBaseballCardWindow.h"
 	<iostream>
 
-1552933775 source:/home/csuser/Documents/A3/CardBraider/View/OKCancelWindow.cpp
+1552933775 source:/home/zach/ssd/CardBraider/CardBraider/View/OKCancelWindow.cpp
 	"OKCancelWindow.h"
+
+1553457295 source:/home/zach/ssd/CardBraider/CardBraider/io/FileReader.cpp
+	"FileReader.h"
+	"FileReader.h"
+	<sstream>
+	<algorithm>
+	<iterator>
+
+1553991790 /home/zach/ssd/CardBraider/CardBraider/io/FileReader.h
+	<fstream>
+	<string>
+	<vector>
+	<iostream>
+
+1553998089 source:/home/zach/ssd/CardBraider/CardBraider/controller/BaseballCardInputController.cpp
+	"BaseballCardInputController.h"
+	"Utils.h"
+	"BaseballCard.h"
+
+1553993614 /home/zach/ssd/CardBraider/CardBraider/controller/BaseballCardInputController.h
+	"io/FileReader.h"
+	"Model/BaseballCardBraidedList.h"
+
+1553997942 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
+	"BaseballCardBraidedList.h"
+	"Utils.h"
+
+1553998233 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.h
+	"BaseballCardNode.h"
+
+1553987186 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.cpp
+	"BaseballCardNode.h"
+
+1553986979 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.h
+	"BaseballCard.h"
 

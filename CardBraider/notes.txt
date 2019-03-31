@@ -1,1 +1,5 @@
 List known bugs or missing functionality here.
+
+1. Instructions read: "Folder names should all be lowercase." However, the starter project uses proper case for folder names. 
+
+1. I'm not sure if a linked list should point to the object itself or an abstraction of the object. I have chosen to use a "BaseballCardNode" class to avoid a violation of SRP in which the BaseballCard object owns details regarding the linked-list implementation. 

@@ -17,6 +17,8 @@
 					<Add directory="../CardBraider" />
 					<Add directory="Model" />
 					<Add directory="Utils" />
+					<Add directory="controller" />
+					<Add directory="Model/" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -29,6 +31,10 @@
 		</Linker>
 		<Unit filename="Model/BaseballCard.cpp" />
 		<Unit filename="Model/BaseballCard.h" />
+		<Unit filename="Model/BaseballCardBraidedList.cpp" />
+		<Unit filename="Model/BaseballCardBraidedList.h" />
+		<Unit filename="Model/BaseballCardNode.cpp" />
+		<Unit filename="Model/BaseballCardNode.h" />
 		<Unit filename="Utils/Utils.cpp" />
 		<Unit filename="Utils/Utils.h" />
 		<Unit filename="View/AddBaseballCardWindow.cpp" />
@@ -39,6 +45,10 @@
 		<Unit filename="View/DeleteBaseballCardWindow.h" />
 		<Unit filename="View/OKCancelWindow.cpp" />
 		<Unit filename="View/OKCancelWindow.h" />
+		<Unit filename="controller/BaseballCardInputController.cpp" />
+		<Unit filename="controller/BaseballCardInputController.h" />
+		<Unit filename="io/FileReader.cpp" />
+		<Unit filename="io/FileReader.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="notes.txt" />
 		<Extensions>
