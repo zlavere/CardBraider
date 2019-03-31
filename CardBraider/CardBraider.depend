@@ -18,7 +18,7 @@
 1553455815 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.cpp
 	"BaseballCard.h"
 
-1553993381 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.h
+1553998680 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.h
 	<string>
 
 1553006935 source:/home/zach/ssd/CardBraider/CardBraider/Utils/Utils.cpp
@@ -87,7 +87,7 @@
 	"io/FileReader.h"
 	"Model/BaseballCardBraidedList.h"
 
-1553997942 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
+1553998446 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
 	"BaseballCardBraidedList.h"
 	"Utils.h"
 
