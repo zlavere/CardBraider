@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1553986979 source:/home/zach/ssd/CardBraider/CardBraider/main.cpp
+1553998680 source:/home/zach/ssd/CardBraider/CardBraider/main.cpp
 	"BaseballCardCollectionWindow.h"
 
-1553995452 /home/zach/ssd/CardBraider/CardBraider/View/BaseballCardCollectionWindow.h
+1554169197 /home/zach/ssd/CardBraider/CardBraider/View/BaseballCardCollectionWindow.h
 	<FL/Fl.H>
 	<FL/Fl_Window.H>
 	<FL/Fl_Group.H>
@@ -13,7 +13,6 @@
 	<FL/Fl_Button.H>
 	<vector>
 	<string>
-	"controller/BaseballCardInputController.h"
 
 1553455815 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.cpp
 	"BaseballCard.h"
@@ -44,7 +43,7 @@
 	<Fl/Fl_Window.H>
 	<Fl/Fl_Button.H>
 
-1553995861 source:/home/zach/ssd/CardBraider/CardBraider/View/BaseballCardCollectionWindow.cpp
+1554169428 source:/home/zach/ssd/CardBraider/CardBraider/View/BaseballCardCollectionWindow.cpp
 	"BaseballCardCollectionWindow.h"
 	"DeleteBaseballCardWindow.h"
 	"AddBaseballCardWindow.h"
@@ -52,13 +51,14 @@
 	<Fl/fl_draw.H>
 	<Fl/Fl_File_Chooser.H>
 	<iostream>
+	"BaseballCardInputController.h"
 
 1553007493 /home/zach/ssd/CardBraider/CardBraider/View/DeleteBaseballCardWindow.h
 	"OKCancelWindow.h"
 	<Fl/Fl_Input.H>
 	<string>
 
-1553986978 source:/home/zach/ssd/CardBraider/CardBraider/View/DeleteBaseballCardWindow.cpp
+1553998680 source:/home/zach/ssd/CardBraider/CardBraider/View/DeleteBaseballCardWindow.cpp
 	"DeleteBaseballCardWindow.h"
 	<iostream>
 
@@ -78,25 +78,26 @@
 	<vector>
 	<iostream>
 
-1553998089 source:/home/zach/ssd/CardBraider/CardBraider/controller/BaseballCardInputController.cpp
+1554178649 source:/home/zach/ssd/CardBraider/CardBraider/controller/BaseballCardInputController.cpp
 	"BaseballCardInputController.h"
 	"Utils.h"
 	"BaseballCard.h"
 
-1553993614 /home/zach/ssd/CardBraider/CardBraider/controller/BaseballCardInputController.h
+1554177905 /home/zach/ssd/CardBraider/CardBraider/controller/BaseballCardInputController.h
 	"io/FileReader.h"
 	"Model/BaseballCardBraidedList.h"
+	"View/BaseballCardCollectionWindow.h"
 
-1553998446 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
+1554177077 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
 	"BaseballCardBraidedList.h"
 	"Utils.h"
 
-1553998233 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.h
+1554175965 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.h
 	"BaseballCardNode.h"
 
-1553987186 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.cpp
+1554077886 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.cpp
 	"BaseballCardNode.h"
 
-1553986979 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.h
+1554077910 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.h
 	"BaseballCard.h"
 

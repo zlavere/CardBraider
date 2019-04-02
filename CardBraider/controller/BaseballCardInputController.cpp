@@ -2,8 +2,8 @@
 
 #include "BaseballCardInputController.h"
 #include "Utils.h"
-#include "BaseballCard.h"
 
+#include "BaseballCard.h"
 using namespace model;
 
 namespace controller
@@ -71,6 +71,50 @@ BaseballCard::Condition BaseballCardInputController::parseCondition(const string
         result = BaseballCard::UNKNOWN;
     }
     return result;
+}
+//TODO either rename this class or create an output controller
+const string& BaseballCardInputController::getSummaryText(int sortOrderEnum)
+{
+    string* summaryText = new string("");
+
+    if(sortOrderEnum == this->SORT_BY_NAME_ASC)
+    {
+       this->getOutputByNameAscending(*summaryText, *this->baseballCards->getNameHead());
+    }
+    else if(sortOrderEnum == this->SORT_BY_NAME_DSC)
+    {
+        this->getOutputByNameDescending(*summaryText, *this->baseballCards->getNameHead());
+    }
+    else
+    {
+        *summaryText = "No cards found.";
+    }
+
+    return *summaryText;
+}
+
+const string& BaseballCardInputController::getOutputByNameAscending(string& output, BaseballCardNode& currentNode) const
+{
+    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + to_string(currentNode.getCondition()) + " " + to_string(currentNode.getPrice()) + "\n";
+
+    if(currentNode.getNextName() != nullptr)
+    {
+        output = this->getOutputByNameAscending(output, *currentNode.getNextName());
+    }
+
+    return output;
+}
+
+const string& BaseballCardInputController::getOutputByNameDescending(string& output, BaseballCardNode& currentNode) const
+{
+    if(currentNode.getNextName() != nullptr)
+    {
+        output = this->getOutputByNameDescending(output, *currentNode.getNextName());
+    }
+
+    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + to_string(currentNode.getCondition()) + " " + to_string(currentNode.getPrice()) + "\n";
+
+    return output;
 }
 
 BaseballCardInputController::~BaseballCardInputController()

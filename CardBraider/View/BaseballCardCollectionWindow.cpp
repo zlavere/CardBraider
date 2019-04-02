@@ -13,6 +13,9 @@
 #include <iostream>
 #endif
 
+#include "BaseballCardInputController.h"
+using namespace controller;
+
 namespace view
 {
 
@@ -51,8 +54,6 @@ BaseballCardCollectionWindow::BaseballCardCollectionWindow(int width, int height
 
     this->deleteButton = new Fl_Button(360, 330, 70, 30, "Delete");
     this->deleteButton->callback(cbDeleteCard, this);
-
-    this->setSummaryText("Demo of how to set the summary text.");
 
     end();
 }
@@ -143,9 +144,11 @@ void BaseballCardCollectionWindow::cbLoad(Fl_Widget* widget, void* data)
     window->promptUserForFilename(Fl_File_Chooser::SINGLE, "Card file to load");
     BaseballCardInputController inputController;
     inputController.importCards(window->getFilename());
+    window->setSummaryText(inputController.getSummaryText(window->sortOrderSelection));
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
 #endif
+
 }
 
 //
@@ -207,7 +210,6 @@ void BaseballCardCollectionWindow::cbSave(Fl_Widget* widget, void* data)
 {
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::CREATE, "Card file to save to");
-
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
 #endif
@@ -230,7 +232,6 @@ void BaseballCardCollectionWindow::cbAddCard(Fl_Widget* widget, void* data)
     AddBaseballCardWindow addCard;
     addCard.set_modal();
     addCard.show();
-
     while (addCard.shown())
     {
         Fl::wait();
@@ -316,9 +317,9 @@ void BaseballCardCollectionWindow::setSortOrderBasedOnSelection()
 //
 // @param outputText The text to display
 //
-void BaseballCardCollectionWindow::setSummaryText(const string& outputText)
+void BaseballCardCollectionWindow::setSummaryText(const string& text)
 {
-    this->summaryOutputTextBuffer->text(outputText.c_str());
+    summaryOutputTextBuffer->text(text.c_str());
 }
 
 //
