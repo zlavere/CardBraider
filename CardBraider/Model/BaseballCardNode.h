@@ -15,7 +15,7 @@ public:
     const string& getFirstName() const;
     const string& getLastName() const;
     int getYear() const;
-    BaseballCard::Condition getCondition() const;
+    const string& getCondition() const;
     int getPrice() const;
     BaseballCardNode* getNextName() const;
     BaseballCardNode* getNextYear() const;

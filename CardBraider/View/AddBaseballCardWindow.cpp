@@ -47,7 +47,7 @@ void AddBaseballCardWindow::okHandler()
     string lastName = this->lastNameInput->value();
 
     BaseballCard::Condition cardCondition = this->determineAndSetConditionBasedOnUserInput();
-    this->inputController->addCardFromInput(vector<string>({firstName,lastName,this->yearInput->value(),this->conditionInput->value(),this->priceInput->value()}));
+    this->inputController->addCardFromInput(vector<string>({lastName,firstName,this->yearInput->value(),this->conditionInput->value(),this->priceInput->value()}));
     try
     {
         int year = this->determineAndSetYearBasedOnUserInput();

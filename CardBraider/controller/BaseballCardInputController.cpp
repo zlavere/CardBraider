@@ -99,7 +99,8 @@ const string& BaseballCardInputController::getSummaryText(int sortOrderEnum)
 
 const string& BaseballCardInputController::getOutputByNameAscending(string& output, BaseballCardNode& currentNode) const
 {
-    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + to_string(currentNode.getCondition()) + " " + to_string(currentNode.getPrice()) + "\n";
+    //TODO Create method in BaseballCardNode to format toString()
+    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
 
     if(currentNode.getNextName() != nullptr)
     {
@@ -116,7 +117,7 @@ const string& BaseballCardInputController::getOutputByNameDescending(string& out
         output = this->getOutputByNameDescending(output, *currentNode.getNextName());
     }
 
-    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + to_string(currentNode.getCondition()) + " " + to_string(currentNode.getPrice()) + "\n";
+    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
 
     return output;
 }
