@@ -101,7 +101,7 @@
 1554077910 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.h
 	"BaseballCard.h"
 
-1554222206 source:/home/zlavere/school/pc2/cardbraider/CardBraider/controller/BaseballCardInputController.cpp
+1554226057 source:/home/zlavere/school/pc2/cardbraider/CardBraider/controller/BaseballCardInputController.cpp
 	"BaseballCardInputController.h"
 	"Utils.h"
 	"BaseballCard.h"
@@ -182,7 +182,7 @@
 	<Fl/Fl_Window.H>
 	<Fl/Fl_Button.H>
 
-1554225142 source:/home/zlavere/school/pc2/cardbraider/CardBraider/View/BaseballCardCollectionWindow.cpp
+1554225915 source:/home/zlavere/school/pc2/cardbraider/CardBraider/View/BaseballCardCollectionWindow.cpp
 	"BaseballCardCollectionWindow.h"
 	"DeleteBaseballCardWindow.h"
 	"AddBaseballCardWindow.h"

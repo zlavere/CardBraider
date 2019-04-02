@@ -11,11 +11,11 @@ namespace controller
 BaseballCardInputController::BaseballCardInputController()
 {
     this->baseballCards = nullptr;
+    this->baseballCards = new BaseballCardBraidedList();
 }
 
 void BaseballCardInputController::importCards(const string& fileName)
 {
-    this->baseballCards = new BaseballCardBraidedList();
     this->fileReader.setFileName(fileName);
     vector<vector<string>> fileLines = this->fileReader.getData();
     for(vector<string> current : fileLines)

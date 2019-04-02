@@ -124,6 +124,12 @@ void BaseballCardCollectionWindow::cbSortingMethodChanged(Fl_Widget* widget, voi
 void BaseballCardCollectionWindow::sortingMethodChanged()
 {
     this->setSortOrderBasedOnSelection();
+    try {
+        this->setSummaryText(this->inputController->getSummaryText(this->sortOrderSelection));
+    } catch (const char* message)
+    {
+        this->setSummaryText("An error occured attempting to setSummaryText");
+    }
 }
 
 //
