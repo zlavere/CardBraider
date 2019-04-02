@@ -15,12 +15,6 @@ BaseballCardInputController::BaseballCardInputController()
 
 void BaseballCardInputController::importCards(const string& fileName)
 {
-    if(this->baseballCards != nullptr)
-    {
-        delete this->baseballCards;
-        this->baseballCards = nullptr;
-    }
-
     this->baseballCards = new BaseballCardBraidedList();
     this->fileReader.setFileName(fileName);
     vector<vector<string>> fileLines = this->fileReader.getData();
@@ -28,6 +22,16 @@ void BaseballCardInputController::importCards(const string& fileName)
     {
         this->baseballCards->addBaseballCard(*this->createNode(current));
     }
+}
+
+void BaseballCardInputController::addCardFromInput(vector<string> data)
+{
+    if(this->baseballCards == nullptr)
+    {
+        this->baseballCards = new BaseballCardBraidedList();
+    }
+
+    this->baseballCards->addBaseballCard(*this->createNode(data));
 }
 
 BaseballCardNode* BaseballCardInputController::createNode(vector<string> data)

@@ -7,6 +7,9 @@ using namespace model;
 
 #include <Fl/Fl_Input.H>
 
+#include "BaseballCardInputController.h"
+using namespace controller;
+
 namespace view
 {
 
@@ -23,13 +26,14 @@ private:
     Fl_Input* priceInput;
 
     BaseballCard* pCard;
+    BaseballCardInputController* inputController;
 
     BaseballCard::Condition determineAndSetConditionBasedOnUserInput();
     int determineAndSetYearBasedOnUserInput();
     int determineAndSetPriceBasedOnUserInput();
 
 public:
-    AddBaseballCardWindow();
+    AddBaseballCardWindow(BaseballCardInputController& inputController);
     virtual ~AddBaseballCardWindow();
 
     void okHandler();

@@ -101,3 +101,105 @@
 1554077910 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.h
 	"BaseballCard.h"
 
+1554222206 source:/home/zlavere/school/pc2/cardbraider/CardBraider/controller/BaseballCardInputController.cpp
+	"BaseballCardInputController.h"
+	"Utils.h"
+	"BaseballCard.h"
+
+1554223710 /home/zlavere/school/pc2/cardbraider/CardBraider/controller/BaseballCardInputController.h
+	"io/FileReader.h"
+	"Model/BaseballCardBraidedList.h"
+
+1554219466 /home/zlavere/school/pc2/cardbraider/CardBraider/io/FileReader.h
+	<fstream>
+	<string>
+	<vector>
+	<iostream>
+
+1554219474 /home/zlavere/school/pc2/cardbraider/CardBraider/Model/BaseballCardBraidedList.h
+	"BaseballCardNode.h"
+
+1554219474 /home/zlavere/school/pc2/cardbraider/CardBraider/Model/BaseballCardNode.h
+	"BaseballCard.h"
+
+1554219466 /home/zlavere/school/pc2/cardbraider/CardBraider/Model/BaseballCard.h
+	<string>
+
+1554223928 /home/zlavere/school/pc2/cardbraider/CardBraider/View/BaseballCardCollectionWindow.h
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Round_Button.H>
+	<FL/Fl_Output.H>
+	<FL/Fl_Text_Buffer.H>
+	<FL/Fl_Text_Display.H>
+	<FL/Fl_Button.H>
+	<vector>
+	<string>
+	"BaseballCardInputController.h"
+
+1554213927 /home/zlavere/school/pc2/cardbraider/CardBraider/Utils/Utils.h
+	<string>
+
+1554219466 source:/home/zlavere/school/pc2/cardbraider/CardBraider/io/FileReader.cpp
+	"FileReader.h"
+	"FileReader.h"
+	<sstream>
+	<algorithm>
+	<iterator>
+
+1554219466 source:/home/zlavere/school/pc2/cardbraider/CardBraider/main.cpp
+	"BaseballCardCollectionWindow.h"
+
+1554213927 source:/home/zlavere/school/pc2/cardbraider/CardBraider/Model/BaseballCard.cpp
+	"BaseballCard.h"
+
+1554219474 source:/home/zlavere/school/pc2/cardbraider/CardBraider/Model/BaseballCardBraidedList.cpp
+	"BaseballCardBraidedList.h"
+	"Utils.h"
+
+1554219474 source:/home/zlavere/school/pc2/cardbraider/CardBraider/Model/BaseballCardNode.cpp
+	"BaseballCardNode.h"
+
+1554213927 source:/home/zlavere/school/pc2/cardbraider/CardBraider/Utils/Utils.cpp
+	"Utils.h"
+	<algorithm>
+	<sstream>
+
+1554224966 source:/home/zlavere/school/pc2/cardbraider/CardBraider/View/AddBaseballCardWindow.cpp
+	"AddBaseballCardWindow.h"
+	"Utils.h"
+	<Fl/fl_ask.H>
+	<sstream>
+
+1554224338 /home/zlavere/school/pc2/cardbraider/CardBraider/View/AddBaseballCardWindow.h
+	"OKCancelWindow.h"
+	"BaseballCard.h"
+	<Fl/Fl_Input.H>
+	"BaseballCardInputController.h"
+
+1554213927 /home/zlavere/school/pc2/cardbraider/CardBraider/View/OKCancelWindow.h
+	<Fl/Fl_Window.H>
+	<Fl/Fl_Button.H>
+
+1554225142 source:/home/zlavere/school/pc2/cardbraider/CardBraider/View/BaseballCardCollectionWindow.cpp
+	"BaseballCardCollectionWindow.h"
+	"DeleteBaseballCardWindow.h"
+	"AddBaseballCardWindow.h"
+	<FL/fl_types.h>
+	<Fl/fl_draw.H>
+	<Fl/Fl_File_Chooser.H>
+	<iostream>
+
+1554213927 /home/zlavere/school/pc2/cardbraider/CardBraider/View/DeleteBaseballCardWindow.h
+	"OKCancelWindow.h"
+	<Fl/Fl_Input.H>
+	<string>
+
+1554219466 source:/home/zlavere/school/pc2/cardbraider/CardBraider/View/DeleteBaseballCardWindow.cpp
+	"DeleteBaseballCardWindow.h"
+	<iostream>
+
+1554213927 source:/home/zlavere/school/pc2/cardbraider/CardBraider/View/OKCancelWindow.cpp
+	"OKCancelWindow.h"
+

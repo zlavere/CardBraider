@@ -7,10 +7,6 @@ using namespace io;
 #include "Model/BaseballCardBraidedList.h"
 using namespace model;
 
-#include "View/BaseballCardCollectionWindow.h"
-using namespace view;
-
-
 namespace controller
 {
 class BaseballCardInputController
@@ -28,7 +24,6 @@ private:
     BaseballCard::Condition parseCondition(const string& condition);
     const string& getOutputByNameAscending(string& output, BaseballCardNode& currentNode) const;
     const string& getOutputByNameDescending(string& output, BaseballCardNode& currentNode) const;
-    BaseballCardCollectionWindow* currentWindow;
 
 public:
     BaseballCardInputController();
@@ -36,6 +31,7 @@ public:
     void importCards(const string& fileName);
     BaseballCardNode* createNode(vector<string> data);
     const string& getSummaryText(int sortOrderEnum);
+    void addCardFromInput(vector<string> data);
 
 };
 }

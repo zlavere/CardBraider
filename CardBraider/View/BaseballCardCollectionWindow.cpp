@@ -13,9 +13,6 @@
 #include <iostream>
 #endif
 
-#include "BaseballCardInputController.h"
-using namespace controller;
-
 namespace view
 {
 
@@ -54,7 +51,7 @@ BaseballCardCollectionWindow::BaseballCardCollectionWindow(int width, int height
 
     this->deleteButton = new Fl_Button(360, 330, 70, 30, "Delete");
     this->deleteButton->callback(cbDeleteCard, this);
-
+    this->inputController = new BaseballCardInputController();
     end();
 }
 
@@ -142,9 +139,8 @@ void BaseballCardCollectionWindow::cbLoad(Fl_Widget* widget, void* data)
 {
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::SINGLE, "Card file to load");
-    BaseballCardInputController inputController;
-    inputController.importCards(window->getFilename());
-    window->setSummaryText(inputController.getSummaryText(window->sortOrderSelection));
+    window->inputController->importCards(window->getFilename());
+    window->setSummaryText(window->inputController->getSummaryText(window->sortOrderSelection));
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
 #endif
@@ -229,7 +225,7 @@ void BaseballCardCollectionWindow::cbAddCard(Fl_Widget* widget, void* data)
 {
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data; // TODO Currently, not used by may need to be used when adapt code
 
-    AddBaseballCardWindow addCard;
+    AddBaseballCardWindow addCard(*window->inputController);
     addCard.set_modal();
     addCard.show();
     while (addCard.shown())
@@ -237,6 +233,7 @@ void BaseballCardCollectionWindow::cbAddCard(Fl_Widget* widget, void* data)
         Fl::wait();
     }
 
+    window->setSummaryText(window->inputController->getSummaryText(window->sortOrderSelection));
 #ifdef DIAGNOSTIC_OUTPUT
     // TODO Remove or adapt code below, currently in for demo purposes
     if (addCard.getWindowResult() == OKCancelWindow::WindowResult::OK)
@@ -253,8 +250,9 @@ void BaseballCardCollectionWindow::cbAddCard(Fl_Widget* widget, void* data)
     {
         cout << "Cancel or closed window." << endl;
     }
-#endif
 
+
+#endif
 }
 
 //

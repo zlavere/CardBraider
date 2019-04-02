@@ -15,10 +15,10 @@ namespace view
 // @precondition none
 // @postcondition none
 //
-AddBaseballCardWindow::AddBaseballCardWindow() : OKCancelWindow(330, 215, "Card to add")
+AddBaseballCardWindow::AddBaseballCardWindow(BaseballCardInputController& inputController) : OKCancelWindow(330, 215, "Card to add")
 {
     const int X_INPUT_LOCATION = 110;
-
+    this->inputController = &inputController;
     this->pCard = 0;
 
     begin();
@@ -47,7 +47,7 @@ void AddBaseballCardWindow::okHandler()
     string lastName = this->lastNameInput->value();
 
     BaseballCard::Condition cardCondition = this->determineAndSetConditionBasedOnUserInput();
-
+    this->inputController->addCardFromInput(vector<string>({firstName,lastName,this->yearInput->value(),this->conditionInput->value(),this->priceInput->value()}));
     try
     {
         int year = this->determineAndSetYearBasedOnUserInput();
@@ -59,7 +59,6 @@ void AddBaseballCardWindow::okHandler()
     {
         fl_message("%s", message);
     }
-
 
 }
 
