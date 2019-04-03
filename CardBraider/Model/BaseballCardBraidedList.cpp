@@ -13,7 +13,7 @@ BaseballCardBraidedList::BaseballCardBraidedList()
 
 void BaseballCardBraidedList::addBaseballCard(BaseballCardNode& newNode)
 {
-        this->insertBaseballCard(newNode);
+    this->insertBaseballCard(newNode);
 }
 
 void BaseballCardBraidedList::insertBaseballCard(BaseballCardNode& newNode)
@@ -21,9 +21,18 @@ void BaseballCardBraidedList::insertBaseballCard(BaseballCardNode& newNode)
     if(this->nameHead == nullptr)
     {
         this->nameHead = &newNode;
-    } else
+    }
+    else
     {
         this->insertIntoNameList(newNode, *this->nameHead);
+    }
+    if(this->yearHead == nullptr)
+    {
+        this->yearHead = &newNode;
+    }
+    else
+    {
+        this->insertIntoYearList(newNode, *this->yearHead);
     }
 
 }
@@ -52,12 +61,38 @@ void BaseballCardBraidedList::insertIntoNameList(BaseballCardNode& newNode, Base
     else if(currentNode.getNextName() == nullptr)
     {
         currentNode.setNextName(newNode);
-        newNode.setPrevName(*this->tail);
-        this->tail = &newNode;
     }
     else
     {
         this->insertIntoNameList(newNode, *currentNode.getNextName());
+    }
+}
+
+void BaseballCardBraidedList::insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode)
+{
+    if(newNode.getYear() <= currentNode.getYear())
+    {
+        if(newNode.getYear() < currentNode.getYear() || toUpperCase(newNode.getLastName()) < toUpperCase(currentNode.getLastName()))
+        {
+            if(&currentNode == this->yearHead)
+            {
+                newNode.setNextYear(currentNode);
+                this->yearHead = &newNode;
+            }
+            else
+            {
+                newNode.setNextYear(currentNode.getNextYear());
+                currentNode.setNextYear(newNode);
+            }
+        }
+    }
+    else if(currentNode.getNextYear() == nullptr)
+    {
+        currentNode.setNextName(newNode);
+    }
+    else
+    {
+        this->insertIntoYearList(newNode, *currentNode.getNextYear());
     }
 }
 

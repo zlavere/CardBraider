@@ -59,7 +59,6 @@ void AddBaseballCardWindow::okHandler()
     {
         fl_message("%s", message);
     }
-
 }
 
 BaseballCard::Condition AddBaseballCardWindow::determineAndSetConditionBasedOnUserInput()
