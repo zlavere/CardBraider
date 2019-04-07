@@ -8,9 +8,6 @@ BaseballCardNode::BaseballCardNode(BaseballCard& nodeReference)
     this->nextName = nullptr;
     this->nextYear = nullptr;
     this->nextCondition = nullptr;
-    this->prevName = nullptr;
-    this->prevYear = nullptr;
-    this->prevCondition = nullptr;
 }
 
 const string& BaseballCardNode::getFirstName() const
@@ -79,21 +76,6 @@ BaseballCardNode* BaseballCardNode::getNextCondition() const
     return this->nextCondition;
 }
 
-BaseballCardNode* BaseballCardNode::getPrevName() const
-{
-    return this->prevName;
-}
-
-BaseballCardNode* BaseballCardNode::getPrevCondition() const
-{
-    return this->prevCondition;
-}
-
-BaseballCardNode* BaseballCardNode::getPrevYear() const
-{
-    return this->prevYear;
-}
-
 BaseballCard* BaseballCardNode::getNodeReference() const
 {
     return this->nodeReference;
@@ -114,65 +96,9 @@ void BaseballCardNode::setNextCondition(BaseballCardNode& baseballCard)
     this->nextCondition = &baseballCard;
 }
 
-void BaseballCardNode::setPrevName(BaseballCardNode& baseballCard)
-{
-    this->prevName = &baseballCard;
-}
-
-void BaseballCardNode::setPrevYear(BaseballCardNode& baseballCard)
-{
-    this->prevYear = &baseballCard;
-}
-
-void BaseballCardNode::setPrevCondition(BaseballCardNode& baseballCard)
-{
-    this->prevCondition = &baseballCard;
-}
-
-void BaseballCardNode::removeBaseballCard()
-{
-    if(this->nextName != nullptr)
-    {
-        this->nextName->setPrevName(*this->prevName);
-    }
-
-    if(this->nextYear != nullptr)
-    {
-        this->nextYear->setPrevYear(*this->prevYear);
-    }
-
-    if(this->nextCondition != nullptr)
-    {
-        this->nextCondition->setPrevCondition(*this->prevCondition);
-    }
-
-    if(this->prevName != nullptr)
-    {
-        this->prevName->setNextName(*this->nextName);
-    }
-
-    if(this->prevYear != nullptr)
-    {
-        this->prevYear->setNextYear(*this->nextYear);
-    }
-
-    if(this->prevCondition != nullptr)
-    {
-        this->prevCondition->setNextCondition(*this->nextCondition);
-    }
-    this->nextName = nullptr;
-    this->nextYear = nullptr;
-    this->nextCondition = nullptr;
-    this->prevName = nullptr;
-    this->prevYear = nullptr;
-    this->prevCondition= nullptr;
-    delete this->nodeReference;
-    this->nodeReference = nullptr;
-}
-
 BaseballCardNode::~BaseballCardNode()
 {
     //dtor
-    this->removeBaseballCard();
+    //this->removeBaseballCard();
 }
 }

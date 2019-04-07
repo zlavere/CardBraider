@@ -12,11 +12,11 @@ private:
     BaseballCardNode* nameHead;
     BaseballCardNode* yearHead;
     BaseballCardNode* conditionHead;
-    BaseballCardNode* tail;
-    void insertIntoNameList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
-    void insertIntoConditionList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
-    void insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
+    void insertIntoNameList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode);
+    void insertIntoConditionList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode);
+    void insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode);
     void insertBaseballCard(BaseballCardNode& newNode);
+    void nsertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
 
 public:
     BaseballCardBraidedList();

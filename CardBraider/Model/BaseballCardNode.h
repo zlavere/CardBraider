@@ -20,25 +20,18 @@ public:
     BaseballCardNode* getNextName() const;
     BaseballCardNode* getNextYear() const;
     BaseballCardNode* getNextCondition() const;
-    BaseballCardNode* getPrevName() const;
-    BaseballCardNode* getPrevCondition() const;
-    BaseballCardNode* getPrevYear() const;
     void setNextName(BaseballCardNode& baseballCard);
     void setNextYear(BaseballCardNode& baseballCard);
     void setNextCondition(BaseballCardNode& baseballCard);
-    void setPrevName(BaseballCardNode& baseballCard);
-    void setPrevYear(BaseballCardNode& baseballCard);
-    void setPrevCondition(BaseballCardNode& baseballCard);
-    void removeBaseballCard();
+
+    //TODO Implement Delete card
+    //void removeBaseballCard();
 
 private:
     BaseballCard* nodeReference;
     BaseballCardNode* nextName;
     BaseballCardNode* nextCondition;
     BaseballCardNode* nextYear;
-    BaseballCardNode* prevName;
-    BaseballCardNode* prevCondition;
-    BaseballCardNode* prevYear;
 };
 }
 #endif // BASEBALLCARDNODE_H

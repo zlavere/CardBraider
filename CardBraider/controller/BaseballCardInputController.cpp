@@ -89,6 +89,14 @@ const string& BaseballCardInputController::getSummaryText(int sortOrderEnum)
     {
         this->getOutputByNameDescending(*summaryText, *this->baseballCards->getNameHead());
     }
+    else if (sortOrderEnum == this->SORT_BY_YEAR_ASC)
+    {
+        this->getOutputByYearAscending(*summaryText, *this->baseballCards->getYearHead());
+    }
+    else if (sortOrderEnum == this->SORT_BY_YEAR_DSC)
+    {
+        this->getOutputByYearDescending(*summaryText, *this->baseballCards->getYearHead());
+    }
     else
     {
         *summaryText = "No cards found.";
@@ -110,11 +118,36 @@ const string& BaseballCardInputController::getOutputByNameAscending(string& outp
     return output;
 }
 
+const string& BaseballCardInputController::getOutputByYearAscending(string& output, BaseballCardNode& currentNode) const
+{
+    //TODO Create method in BaseballCardNode to format toString()
+    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
+
+    if(currentNode.getNextYear() != nullptr)
+    {
+        output = this->getOutputByYearAscending(output, *currentNode.getNextYear());
+    }
+
+    return output;
+}
+
 const string& BaseballCardInputController::getOutputByNameDescending(string& output, BaseballCardNode& currentNode) const
 {
     if(currentNode.getNextName() != nullptr)
     {
         output = this->getOutputByNameDescending(output, *currentNode.getNextName());
+    }
+
+    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
+
+    return output;
+}
+
+const string& BaseballCardInputController::getOutputByYearDescending(string& output, BaseballCardNode& currentNode) const
+{
+    if(currentNode.getNextYear() != nullptr)
+    {
+        output = this->getOutputByYearDescending(output, *currentNode.getNextYear());
     }
 
     output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
