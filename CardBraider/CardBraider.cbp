@@ -49,6 +49,8 @@
 		<Unit filename="controller/BaseballCardInputController.h" />
 		<Unit filename="controller/BaseballCardOutputController.cpp" />
 		<Unit filename="controller/BaseballCardOutputController.h" />
+		<Unit filename="controller/DeleteCardController.cpp" />
+		<Unit filename="controller/DeleteCardController.h" />
 		<Unit filename="io/FileReader.cpp" />
 		<Unit filename="io/FileReader.h" />
 		<Unit filename="main.cpp" />

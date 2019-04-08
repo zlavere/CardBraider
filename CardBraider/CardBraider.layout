@@ -2,9 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="View/AddBaseballCardWindow.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="controller/DeleteCardController.cpp" open="1" top="1" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="636" topLine="0" />
+			<Cursor1 position="752" topLine="13" />
 		</Cursor>
 	</File>
 	<File name="View/OKCancelWindow.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -12,94 +12,19 @@
 			<Cursor1 position="103" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Utils/Utils.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Model/BaseballCardBraidedList.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="364" topLine="0" />
+			<Cursor1 position="1079" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="io/FileReader.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="View/AddBaseballCardWindow.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="493" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="notes.txt" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="47" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Model/BaseballCard.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="465" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Model/BaseballCardNode.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="405" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="controller/BaseballCardOutputController.cpp" open="1" top="1" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="124" />
+			<Cursor1 position="636" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="View/BaseballCardCollectionWindow.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4798" topLine="131" />
-		</Cursor>
-	</File>
-	<File name="View/OKCancelWindow.cpp" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1084" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="Model/BaseballCard.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="449" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="View/DeleteBaseballCardWindow.cpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="521" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="Model/BaseballCardBraidedList.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="392" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="View/DeleteBaseballCardWindow.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="383" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Utils/Utils.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="50" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="controller/BaseballCardInputController.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2451" topLine="46" />
-		</Cursor>
-	</File>
-	<File name="View/BaseballCardCollectionWindow.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1681" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="View/AddBaseballCardWindow.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2401" topLine="132" />
-		</Cursor>
-	</File>
-	<File name="io/FileReader.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="351" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Model/BaseballCardNode.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1027" topLine="15" />
+			<Cursor1 position="8604" topLine="252" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -107,14 +32,104 @@
 			<Cursor1 position="320" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Model/BaseballCardBraidedList.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="View/DeleteBaseballCardWindow.cpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="507" topLine="0" />
+			<Cursor1 position="653" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="View/DeleteBaseballCardWindow.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="228" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Utils/Utils.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="50" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Model/BaseballCard.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="465" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Model/BaseballCardNode.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1606" topLine="49" />
 		</Cursor>
 	</File>
 	<File name="controller/BaseballCardInputController.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="636" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="io/FileReader.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="351" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="View/AddBaseballCardWindow.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2401" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="controller/DeleteCardController.h" open="1" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="460" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="notes.txt" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="47" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="controller/BaseballCardInputController.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1237" topLine="73" />
+		</Cursor>
+	</File>
+	<File name="controller/BaseballCardOutputController.cpp" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4087" topLine="122" />
+		</Cursor>
+	</File>
+	<File name="controller/BaseballCardOutputController.h" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Model/BaseballCardBraidedList.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6443" topLine="178" />
+		</Cursor>
+	</File>
+	<File name="View/OKCancelWindow.cpp" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1084" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="Utils/Utils.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="364" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="View/BaseballCardCollectionWindow.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="921" topLine="56" />
+		</Cursor>
+	</File>
+	<File name="Model/BaseballCard.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="449" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Model/BaseballCardNode.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="405" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="io/FileReader.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="493" topLine="6" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

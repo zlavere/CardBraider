@@ -12,13 +12,14 @@ namespace view
 // @precondition none
 // @postcondition none
 //
-DeleteBaseballCardWindow::DeleteBaseballCardWindow() : OKCancelWindow(330, 90, "Card to delete")
+DeleteBaseballCardWindow::DeleteBaseballCardWindow(DeleteCardController& deleteCardController) : OKCancelWindow(330, 90, "Card to delete")
 {
     begin();
 
     this->lastNameInput = new Fl_Input(105, 15, 200, 25, "Last name:");
     this->setOKLocation(90, 50);
     this->setCancelLocation(170, 50);
+    this->deleteCardController = &deleteCardController;
 
     end();
 }
@@ -32,6 +33,7 @@ DeleteBaseballCardWindow::DeleteBaseballCardWindow() : OKCancelWindow(330, 90, "
 void DeleteBaseballCardWindow::okHandler()
 {
     this->lastName = this->lastNameInput->value();
+    this->deleteCardController->deleteCardsByLastName(this->lastName);
     this->hide();
 }
 

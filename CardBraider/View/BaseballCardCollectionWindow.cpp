@@ -53,6 +53,7 @@ BaseballCardCollectionWindow::BaseballCardCollectionWindow(int width, int height
     this->deleteButton->callback(cbDeleteCard, this);
     this->inputController = new BaseballCardInputController();
     this->outputController = new BaseballCardOutputController();
+    this->deleteCardController = new DeleteCardController();
     end();
 }
 
@@ -141,8 +142,9 @@ void BaseballCardCollectionWindow::cbLoad(Fl_Widget* widget, void* data)
 {
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::SINGLE, "Card file to load");
-    window->inputController->importCards(window->getFilename());
+    window->inputController->importCardsFromFile(window->getFilename());
     window->outputController->setBaseballCards(*window->inputController->getBaseballCardsBraidedList());
+    window->deleteCardController->setBaseballCards(*window->inputController->getBaseballCardsBraidedList());
     window->setSummaryText(window->outputController->getSummaryText(window->sortOrderSelection));
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
@@ -252,7 +254,7 @@ void BaseballCardCollectionWindow::cbDeleteCard(Fl_Widget* widget, void* data)
 {
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
 
-    DeleteBaseballCardWindow deleteCard;
+    DeleteBaseballCardWindow deleteCard(*window->deleteCardController);
     deleteCard.set_modal();
     deleteCard.show();
 
@@ -260,6 +262,8 @@ void BaseballCardCollectionWindow::cbDeleteCard(Fl_Widget* widget, void* data)
     {
         Fl::wait();
     }
+
+     window->setSummaryText(window->outputController->getSummaryText(window->sortOrderSelection));
 
 #ifdef DIAGNOSTIC_OUTPUT
     if (deleteCard.getWindowResult() == OKCancelWindow::WindowResult::OK)

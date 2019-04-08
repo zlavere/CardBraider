@@ -18,7 +18,9 @@ private:
     void insertBaseballCard(BaseballCardNode& newNode);
     void insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
     void deleteAllCards(BaseballCardNode* current);
-
+    BaseballCardNode* findPreviousInNameList(BaseballCardNode& node, BaseballCardNode& current);
+    BaseballCardNode* findPreviousInYearList(BaseballCardNode& node, BaseballCardNode& current);
+    BaseballCardNode* findPreviousInConditionList(BaseballCardNode& node, BaseballCardNode& current);
 public:
     BaseballCardBraidedList();
     virtual ~BaseballCardBraidedList();
@@ -27,6 +29,10 @@ public:
     BaseballCardNode* getYearHead();
     BaseballCardNode* getConditionHead();
     BaseballCardNode* getTail();
+    void setNameHead(BaseballCardNode& newNode);
+    void setYearHead(BaseballCardNode& newNode);
+    void setConditionHead(BaseballCardNode& newNode);
+    void deleteNode(BaseballCardNode& node);
 
 };
 }

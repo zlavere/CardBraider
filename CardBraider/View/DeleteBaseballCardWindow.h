@@ -8,6 +8,9 @@
 #include <string>
 using namespace std;
 
+#include "DeleteCardController.h"
+using namespace controller;
+
 namespace view
 {
 
@@ -19,9 +22,10 @@ class DeleteBaseballCardWindow : public OKCancelWindow
 private:
     Fl_Input* lastNameInput;
     string lastName;
+    DeleteCardController* deleteCardController;
 
 public:
-    DeleteBaseballCardWindow();
+    DeleteBaseballCardWindow(DeleteCardController& deleteCardController);
     virtual ~DeleteBaseballCardWindow();
 
     void okHandler();

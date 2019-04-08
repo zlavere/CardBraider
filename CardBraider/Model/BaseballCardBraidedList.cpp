@@ -16,6 +16,21 @@ void BaseballCardBraidedList::addBaseballCard(BaseballCardNode& newNode)
     this->insertBaseballCard(newNode);
 }
 
+void BaseballCardBraidedList::setNameHead(BaseballCardNode& newHead)
+{
+    this->nameHead = &newHead;
+}
+
+void BaseballCardBraidedList::setYearHead(BaseballCardNode& newHead)
+{
+    this->yearHead = &newHead;
+}
+
+void BaseballCardBraidedList::setConditionHead(BaseballCardNode& newHead)
+{
+    this->conditionHead = &newHead;
+}
+
 void BaseballCardBraidedList::insertBaseballCard(BaseballCardNode& newNode)
 {
     if(this->nameHead == nullptr)
@@ -160,6 +175,80 @@ BaseballCardNode* BaseballCardBraidedList::getYearHead()
 BaseballCardNode* BaseballCardBraidedList::getConditionHead()
 {
     return this->conditionHead;
+}
+
+void BaseballCardBraidedList::deleteNode(BaseballCardNode& node)
+{
+    BaseballCardNode* prevName = this->findPreviousInNameList(node, *this->nameHead);
+    BaseballCardNode* prevYear = this->findPreviousInYearList(node, *this->yearHead);
+    BaseballCardNode* prevCondition = this->findPreviousInConditionList(node, *this->conditionHead);
+
+    prevName->setNextName(*node.getNextName());
+    prevYear->setNextYear(*node.getNextYear());
+    prevCondition->setNextCondition(*node.getNextCondition());
+
+    BaseballCardNode* pNode = &node;
+
+    delete pNode;
+    pNode = nullptr;
+}
+
+BaseballCardNode* BaseballCardBraidedList::findPreviousInNameList(BaseballCardNode& node, BaseballCardNode& current)
+{
+    BaseballCardNode* previous = nullptr;
+    if(this->nameHead == &node)
+    {
+        previous = this->nameHead;
+        this->nameHead = previous->getNextName();
+    }
+    else if(current.getNextName() == &node)
+    {
+        previous = &current;
+    }
+    else
+    {
+        this->findPreviousInNameList(node, *current.getNextName());
+    }
+
+    return previous;
+}
+
+BaseballCardNode* BaseballCardBraidedList::findPreviousInYearList(BaseballCardNode& node, BaseballCardNode& current)
+{
+    BaseballCardNode* previous = nullptr;
+    if(this->yearHead == &node)
+    {
+        previous = this->yearHead;
+        this->yearHead = previous->getNextYear();
+    }
+    else if(current.getNextYear() == &node)
+    {
+        previous = &current;
+    }
+    else
+    {
+        this->findPreviousInYearList(node, *current.getNextYear());
+    }
+    return previous;
+}
+
+BaseballCardNode* BaseballCardBraidedList::findPreviousInConditionList(BaseballCardNode& node, BaseballCardNode& current)
+{
+    BaseballCardNode* previous = nullptr;
+    if(this->conditionHead == &node)
+    {
+        previous = this->conditionHead;
+        this->conditionHead = previous->getNextCondition();
+    }
+    else if(current.getNextCondition() == &node)
+    {
+        previous = &current;
+    }
+    else
+    {
+        this->findPreviousInConditionList(node, *current.getNextCondition());
+    }
+    return previous;
 }
 
 void BaseballCardBraidedList::deleteAllCards(BaseballCardNode* current)
