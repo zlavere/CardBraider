@@ -8,7 +8,8 @@ using namespace std;
 #include "BaseballCard.h"
 using namespace model;
 
-namespace controller {
+namespace controller
+{
 BaseballCardOutputController::BaseballCardOutputController()
 {
     //ctor
@@ -132,6 +133,36 @@ string BaseballCardOutputController::formatCardData(BaseballCardNode& baseballCa
     return formattedData;
 }
 
+string BaseballCardOutputController::formatCardDataCsv(BaseballCardNode& baseballCard) const
+{
+    string formattedData = baseballCard.getLastName() + "," +
+                           baseballCard.getFirstName() + "," +
+                           to_string(baseballCard.getYear()) + "," +
+                           baseballCard.getConditionDescription() + "," +
+                           to_string(baseballCard.getPrice());
+}
+
+const string& BaseballCardOutputController::getBaseballCardsCsv()
+{
+    string baseballCardCsv;
+    BaseballCardNode& current = *this->baseballCards->getNameHead();
+    baseballCardCsv = this->formatCardDataCsv(current);
+    do
+    {
+        baseballCardCsv += "\n" + this->formatCardDataCsv(*current.getNextName());
+        current = *current.getNextName();
+    }
+    while(current.getNextName() != nullptr);
+
+    return baseballCardCsv;
+}
+
+void BaseballCardOutputController::saveCardsToCsv(const string& fileName)
+{
+    this->fileWriter.setOutputFile(fileName);
+    this->fileWriter.writeDataToFile(this->getBaseballCardsCsv());
+}
+
 void BaseballCardOutputController::setBaseballCards(BaseballCardBraidedList& baseballCards)
 {
     this->baseballCards = &baseballCards;
@@ -142,4 +173,3 @@ BaseballCardOutputController::~BaseballCardOutputController()
     //dtor
 }
 }
-

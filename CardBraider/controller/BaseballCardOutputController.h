@@ -8,6 +8,9 @@ using namespace std;
 #include "BaseballCardBraidedList.h"
 using namespace model;
 
+#include "io/FileWriter.h"
+using namespace io;
+
 namespace controller
 {
 class BaseballCardOutputController
@@ -27,12 +30,16 @@ private:
     const string& getOutputByConditionAscending(string& output, BaseballCardNode& currentNode) const;
     const string& getOutputByConditionDescending(string& output, BaseballCardNode& currentNode) const;
     string formatCardData(BaseballCardNode& baseballCard) const;
+    string formatCardDataCsv(BaseballCardNode& baseballCard) const;
+    const string& getBaseballCardsCsv();
+    FileWriter fileWriter;
 
 public:
     BaseballCardOutputController();
     virtual ~BaseballCardOutputController();
     void setBaseballCards(BaseballCardBraidedList& baseballCards);
     const string& getSummaryText(int sortOrderEnum);
+    void saveCardsToCsv(const string& fileName);
 };
 }
 
