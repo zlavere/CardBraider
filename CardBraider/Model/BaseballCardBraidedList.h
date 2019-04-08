@@ -16,7 +16,8 @@ private:
     void insertIntoConditionList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode);
     void insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode);
     void insertBaseballCard(BaseballCardNode& newNode);
-    void nsertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
+    void insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode);
+    void deleteAllCards(BaseballCardNode* current);
 
 public:
     BaseballCardBraidedList();

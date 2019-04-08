@@ -16,6 +16,7 @@
 using namespace std;
 
 #include "BaseballCardInputController.h"
+#include "BaseballCardOutputController.h"
 using namespace controller;
 
 namespace view
@@ -58,6 +59,7 @@ private:
 
     string selectedFilename;
     BaseballCardInputController* inputController;
+    BaseballCardOutputController* outputController;
 
     void createAndDisplaySortingRadioButtons();
     void setSortOrderBasedOnSelection();

@@ -20,7 +20,12 @@ const string& BaseballCardNode::getLastName() const
     return this->nodeReference->getLastName();
 }
 
-const string& BaseballCardNode::getCondition() const
+const int BaseballCardNode::getConditionValue() const
+{
+    return this->nodeReference->getCondition();
+}
+
+const string& BaseballCardNode::getConditionDescription() const
 {
     int condition = this->nodeReference->getCondition();
     string* conditionDescription = new string("");
@@ -44,7 +49,8 @@ const string& BaseballCardNode::getCondition() const
     {
         *conditionDescription = "Mint";
     }
-    else {
+    else
+    {
         *conditionDescription = "Unknown";
     }
 
@@ -98,7 +104,7 @@ void BaseballCardNode::setNextCondition(BaseballCardNode& baseballCard)
 
 BaseballCardNode::~BaseballCardNode()
 {
-    //dtor
-    //this->removeBaseballCard();
+    delete this->nodeReference;
+    this->nodeReference = nullptr;
 }
 }

@@ -1,47 +1,5 @@
 List known bugs or missing functionality here.
 
-1. Instructions read: "Folder names should all be lowercase." However, the starter project uses proper case for folder names. 
+1. Instructions read: "Folder names should all be lowercase." However, the starter project uses proper case for folder names. TODO: Change directory names to follow naming conventions
 
 1. I'm not sure if a linked list should point to the object itself or an abstraction of the object. I have chosen to use a "BaseballCardNode" class to avoid a violation of SRP in which the BaseballCard object owns details regarding the linked-list implementation. 
-
-//needed to remove this
-void BaseballCardNode::removeBaseballCard()
-{
-    if(this->nextName != nullptr)
-    {
-        this->nextName->setPrevName(*this->prevName);
-    }
-
-    if(this->nextYear != nullptr)
-    {
-        this->nextYear->setPrevYear(*this->prevYear);
-    }
-
-    if(this->nextCondition != nullptr)
-    {
-        this->nextCondition->setPrevCondition(*this->prevCondition);
-    }
-
-    if(this->prevName != nullptr)
-    {
-        this->prevName->setNextName(*this->nextName);
-    }
-
-    if(this->prevYear != nullptr)
-    {
-        this->prevYear->setNextYear(*this->nextYear);
-    }
-
-    if(this->prevCondition != nullptr)
-    {
-        this->prevCondition->setNextCondition(*this->nextCondition);
-    }
-    this->nextName = nullptr;
-    this->nextYear = nullptr;
-    this->nextCondition = nullptr;
-    this->prevName = nullptr;
-    this->prevYear = nullptr;
-    this->prevCondition= nullptr;
-    delete this->nodeReference;
-    this->nodeReference = nullptr;
-}

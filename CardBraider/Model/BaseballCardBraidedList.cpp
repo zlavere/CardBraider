@@ -36,9 +36,15 @@ void BaseballCardBraidedList::insertBaseballCard(BaseballCardNode& newNode)
         this->insertIntoYearList(newNode, *this->yearHead, *this->yearHead);
     }
 
+    if(this->conditionHead == nullptr)
+    {
+        this->conditionHead = &newNode;
+    }
+    else
+    {
+        this->insertIntoConditionList(newNode, *this->conditionHead, *this->conditionHead);
+    }
 }
-
-// TODO (zach#1#): Add same method for price and year if new.year < curr.year } else if { new.year <= curr.year && new.lastName < curr.lastname
 
 void BaseballCardBraidedList::insertIntoNameList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode)
 {
@@ -67,7 +73,6 @@ void BaseballCardBraidedList::insertIntoNameList(BaseballCardNode& newNode, Base
 
 void BaseballCardBraidedList::insertIntoYearList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode)
 {
-    //TODO Figure out if this is necessary or move last name condition up?
     if(newNode.getYear() < currentNode.getYear())
     {
         if(&currentNode == this->yearHead)
@@ -93,7 +98,6 @@ void BaseballCardBraidedList::insertIntoYearList(BaseballCardNode& newNode, Base
             newNode.setNextYear(currentNode);
             previousNode.setNextYear(newNode);
         }
-
     }
     else if(currentNode.getNextYear() == nullptr)
     {
@@ -102,6 +106,44 @@ void BaseballCardBraidedList::insertIntoYearList(BaseballCardNode& newNode, Base
     else
     {
         this->insertIntoYearList(newNode, *currentNode.getNextYear(), currentNode);
+    }
+}
+
+void BaseballCardBraidedList::insertIntoConditionList(BaseballCardNode& newNode, BaseballCardNode& currentNode, BaseballCardNode& previousNode)
+{
+    if(newNode.getConditionValue() < currentNode.getConditionValue())
+    {
+        if(&currentNode == this->conditionHead)
+        {
+            newNode.setNextCondition(currentNode);
+            this->conditionHead = &newNode;
+        }
+        else
+        {
+            newNode.setNextCondition(currentNode);
+            previousNode.setNextCondition(newNode);
+        }
+    }
+    else if (newNode.getConditionValue() == currentNode.getConditionValue() && toUpperCase(newNode.getLastName()) <= toUpperCase(currentNode.getLastName()))
+    {
+        if(&currentNode == this->conditionHead)
+        {
+                newNode.setNextCondition(currentNode);
+                this->conditionHead = &newNode;
+        }
+        else
+        {
+            newNode.setNextCondition(currentNode);
+            previousNode.setNextCondition(newNode);
+        }
+    }
+    else if(currentNode.getNextCondition() == nullptr)
+    {
+        currentNode.setNextCondition(newNode);
+    }
+    else
+    {
+        this->insertIntoConditionList(newNode, *currentNode.getNextCondition(), currentNode);
     }
 }
 
@@ -115,9 +157,25 @@ BaseballCardNode* BaseballCardBraidedList::getYearHead()
     return this->yearHead;
 }
 
+BaseballCardNode* BaseballCardBraidedList::getConditionHead()
+{
+    return this->conditionHead;
+}
+
+void BaseballCardBraidedList::deleteAllCards(BaseballCardNode* current)
+{
+    if(current != nullptr)
+    {
+        this->deleteAllCards(current->getNextName());
+    }
+
+    delete current;
+    current = nullptr;
+}
+
 BaseballCardBraidedList::~BaseballCardBraidedList()
 {
-    //dtor
+    this->deleteAllCards(this->nameHead);
 }
 }
 

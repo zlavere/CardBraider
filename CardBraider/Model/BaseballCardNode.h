@@ -15,7 +15,8 @@ public:
     const string& getFirstName() const;
     const string& getLastName() const;
     int getYear() const;
-    const string& getCondition() const;
+    const string& getConditionDescription() const;
+    const int getConditionValue() const;
     int getPrice() const;
     BaseballCardNode* getNextName() const;
     BaseballCardNode* getNextYear() const;

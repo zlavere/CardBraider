@@ -52,6 +52,7 @@ BaseballCardCollectionWindow::BaseballCardCollectionWindow(int width, int height
     this->deleteButton = new Fl_Button(360, 330, 70, 30, "Delete");
     this->deleteButton->callback(cbDeleteCard, this);
     this->inputController = new BaseballCardInputController();
+    this->outputController = new BaseballCardOutputController();
     end();
 }
 
@@ -124,12 +125,7 @@ void BaseballCardCollectionWindow::cbSortingMethodChanged(Fl_Widget* widget, voi
 void BaseballCardCollectionWindow::sortingMethodChanged()
 {
     this->setSortOrderBasedOnSelection();
-    try {
-        this->setSummaryText(this->inputController->getSummaryText(this->sortOrderSelection));
-    } catch (const char* message)
-    {
-        this->setSummaryText("An error occured attempting to setSummaryText");
-    }
+    this->setSummaryText(this->outputController->getSummaryText(this->sortOrderSelection));
 }
 
 //
@@ -146,7 +142,8 @@ void BaseballCardCollectionWindow::cbLoad(Fl_Widget* widget, void* data)
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::SINGLE, "Card file to load");
     window->inputController->importCards(window->getFilename());
-    window->setSummaryText(window->inputController->getSummaryText(window->sortOrderSelection));
+    window->outputController->setBaseballCards(*window->inputController->getBaseballCardsBraidedList());
+    window->setSummaryText(window->outputController->getSummaryText(window->sortOrderSelection));
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
 #endif
@@ -215,7 +212,6 @@ void BaseballCardCollectionWindow::cbSave(Fl_Widget* widget, void* data)
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
 #endif
-
 }
 
 //
@@ -229,36 +225,18 @@ void BaseballCardCollectionWindow::cbSave(Fl_Widget* widget, void* data)
 //
 void BaseballCardCollectionWindow::cbAddCard(Fl_Widget* widget, void* data)
 {
-    BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data; // TODO Currently, not used by may need to be used when adapt code
+    BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
 
     AddBaseballCardWindow addCard(*window->inputController);
     addCard.set_modal();
     addCard.show();
+
     while (addCard.shown())
     {
         Fl::wait();
     }
 
-    window->setSummaryText(window->inputController->getSummaryText(window->sortOrderSelection));
-#ifdef DIAGNOSTIC_OUTPUT
-    // TODO Remove or adapt code below, currently in for demo purposes
-    if (addCard.getWindowResult() == OKCancelWindow::WindowResult::OK)
-    {
-        BaseballCard* pCard = addCard.getCard();
-        cout << "OK" << endl;
-        cout << "First name: " << pCard->getFirstName() << endl;
-        cout << "Last name: " << pCard->getLastName() << endl;
-        cout << "Year: " << pCard->getYear() << endl;
-        cout << "Condition: " << pCard->getCondition() << endl;
-        cout << "Price: " << pCard->getPrice() << endl;
-    }
-    else
-    {
-        cout << "Cancel or closed window." << endl;
-    }
-
-
-#endif
+    window->setSummaryText(window->outputController->getSummaryText(window->sortOrderSelection));
 }
 
 //
@@ -311,6 +289,13 @@ void BaseballCardCollectionWindow::setSortOrderBasedOnSelection()
             this->sortOrderSelection = (SortOrder)i;
         }
     }
+
+
+
+    //Does this get rid of the getDescription() string for each card?
+    //char* existingText = this->summaryOutputTextBuffer->text();
+    //delete existingText;
+    //existingText = nullptr;
 }
 
 //

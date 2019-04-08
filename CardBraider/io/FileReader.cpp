@@ -27,6 +27,7 @@ vector<string> FileReader::readInFileLines()
     {
         cout << "There was an error finding this file." << endl;
     }
+
     while(stream >> line)
     {
         fileLines.push_back(line);
@@ -39,6 +40,7 @@ vector<string> FileReader::readInFileLines()
 void FileReader::parseFileLines()
 {
     vector<string> fileLines = this->readInFileLines();
+
     this->data.reserve(fileLines.size());
 
     for(size_t i = 0; i < fileLines.size(); i++)
@@ -59,6 +61,7 @@ void FileReader::parseFileLines()
 
 vector<vector<string>> FileReader::getData()
 {
+    this->data.clear();
     this->parseFileLines();
     return this->data;
 }

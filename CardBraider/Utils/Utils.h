@@ -8,5 +8,6 @@ using namespace std;
 
 const string toUpperCase(string text);
 int toInt(const string& text, const char* errorMessage);
+const string formatCurrencyAsString(int wholeDollarValue);
 
 #endif // UTILS_H

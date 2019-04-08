@@ -1,23 +1,28 @@
 #define DIAGNOSTIC_OUTPUT
-
 #include "BaseballCardInputController.h"
-#include "Utils.h"
 
-#include "BaseballCard.h"
-using namespace model;
+#include "Utils.h"
 
 namespace controller
 {
 BaseballCardInputController::BaseballCardInputController()
 {
     this->baseballCards = nullptr;
-    this->baseballCards = new BaseballCardBraidedList();
 }
 
-void BaseballCardInputController::importCards(const string& fileName)
+void BaseballCardInputController::importCardsFromFile(const string& fileName)
 {
+    if(this->baseballCards != nullptr)
+    {
+        delete this->baseballCards;
+        this->baseballCards = nullptr;
+    }
+
+    this->baseballCards = new BaseballCardBraidedList();
     this->fileReader.setFileName(fileName);
+
     vector<vector<string>> fileLines = this->fileReader.getData();
+
     for(vector<string> current : fileLines)
     {
         this->baseballCards->addBaseballCard(*this->createNode(current));
@@ -50,6 +55,7 @@ BaseballCardNode* BaseballCardInputController::createNode(vector<string> data)
 BaseballCard::Condition BaseballCardInputController::parseCondition(const string& condition)
 {
     BaseballCard::Condition result;
+
     if(toUpperCase(condition).compare("POOR") == 0)
     {
         result = BaseballCard::POOR;
@@ -74,85 +80,13 @@ BaseballCard::Condition BaseballCardInputController::parseCondition(const string
     {
         result = BaseballCard::UNKNOWN;
     }
+
     return result;
 }
-//TODO either rename this class or create an output controller
-const string& BaseballCardInputController::getSummaryText(int sortOrderEnum)
+
+BaseballCardBraidedList* BaseballCardInputController::getBaseballCardsBraidedList()
 {
-    string* summaryText = new string("");
-
-    if(sortOrderEnum == this->SORT_BY_NAME_ASC)
-    {
-       this->getOutputByNameAscending(*summaryText, *this->baseballCards->getNameHead());
-    }
-    else if(sortOrderEnum == this->SORT_BY_NAME_DSC)
-    {
-        this->getOutputByNameDescending(*summaryText, *this->baseballCards->getNameHead());
-    }
-    else if (sortOrderEnum == this->SORT_BY_YEAR_ASC)
-    {
-        this->getOutputByYearAscending(*summaryText, *this->baseballCards->getYearHead());
-    }
-    else if (sortOrderEnum == this->SORT_BY_YEAR_DSC)
-    {
-        this->getOutputByYearDescending(*summaryText, *this->baseballCards->getYearHead());
-    }
-    else
-    {
-        *summaryText = "No cards found.";
-    }
-
-    return *summaryText;
-}
-
-const string& BaseballCardInputController::getOutputByNameAscending(string& output, BaseballCardNode& currentNode) const
-{
-    //TODO Create method in BaseballCardNode to format toString()
-    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
-
-    if(currentNode.getNextName() != nullptr)
-    {
-        output = this->getOutputByNameAscending(output, *currentNode.getNextName());
-    }
-
-    return output;
-}
-
-const string& BaseballCardInputController::getOutputByYearAscending(string& output, BaseballCardNode& currentNode) const
-{
-    //TODO Create method in BaseballCardNode to format toString()
-    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
-
-    if(currentNode.getNextYear() != nullptr)
-    {
-        output = this->getOutputByYearAscending(output, *currentNode.getNextYear());
-    }
-
-    return output;
-}
-
-const string& BaseballCardInputController::getOutputByNameDescending(string& output, BaseballCardNode& currentNode) const
-{
-    if(currentNode.getNextName() != nullptr)
-    {
-        output = this->getOutputByNameDescending(output, *currentNode.getNextName());
-    }
-
-    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
-
-    return output;
-}
-
-const string& BaseballCardInputController::getOutputByYearDescending(string& output, BaseballCardNode& currentNode) const
-{
-    if(currentNode.getNextYear() != nullptr)
-    {
-        output = this->getOutputByYearDescending(output, *currentNode.getNextYear());
-    }
-
-    output += currentNode.getFirstName() + " " + currentNode.getLastName() + " " + to_string(currentNode.getYear()) + " " + currentNode.getCondition() + " $" + to_string(currentNode.getPrice()) + ".00\n";
-
-    return output;
+    return this->baseballCards;
 }
 
 BaseballCardInputController::~BaseballCardInputController()

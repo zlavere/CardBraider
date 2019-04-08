@@ -42,5 +42,22 @@ int toInt(const string& text, const char* errorMessage)
     }
 
     return value;
+}
 
+//
+// Returns a string for @wholeDollarValue as if int parameter
+// is US Dollar value
+//
+// @precondition none
+// @postcondition none
+//
+// @param the integer to be converted to a US Dollar string
+//
+// @return String representation of US Dollar for the amount of wholeDollarValue
+//
+const string formatCurrencyAsString(int wholeDollarValue)
+{
+    string currencyString;
+    currencyString = "$" + to_string(wholeDollarValue) + ".00";
+    return currencyString;
 }
