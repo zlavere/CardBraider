@@ -11,21 +11,49 @@ BaseballCardBraidedList::BaseballCardBraidedList()
     this->conditionHead = nullptr;
 }
 
+//
+// Adds a BaseballCard to the current collection of baseball cards
+//
+// @param newNode the node that reference the new BaseballCard to be added
+// @precondition none
+// @postcondition Collection of cards now contains the card.
+//
 void BaseballCardBraidedList::addBaseballCard(BaseballCardNode& newNode)
 {
     this->insertBaseballCard(newNode);
 }
 
+//
+// Sets the head of the Last Name based braid in the braided list.
+//
+// @param the BaseballCardNode to be set as the head of the NameList
+// @precondition none
+// @postcondition newHead the nameHead assigned to newHead at the head of the linked list.
+//
 void BaseballCardBraidedList::setNameHead(BaseballCardNode& newHead)
 {
     this->nameHead = &newHead;
 }
 
+//
+// Sets the head of the year based braid in the braided list.
+//
+// @param the BaseballCardNode to be set as the head of the Year List.
+// @precondition none
+// @postcondition newHead the newHead is now at the head of the year linked list.
+//
 void BaseballCardBraidedList::setYearHead(BaseballCardNode& newHead)
 {
     this->yearHead = &newHead;
 }
 
+//
+// Sets the head of the condition based braid in the braided list.
+//
+// @param the BaseballCardNode to be set as the head of the Condition List.
+// @precondition none
+// @postcondition newHead the newHead is now at the head of the condition linked list.
+//
 void BaseballCardBraidedList::setConditionHead(BaseballCardNode& newHead)
 {
     this->conditionHead = &newHead;
@@ -162,21 +190,48 @@ void BaseballCardBraidedList::insertIntoConditionList(BaseballCardNode& newNode,
     }
 }
 
+//
+// Returns a pointer to the node at the head of the name list.
+//
+// @precondition none
+// @postcondition none
+// @return a pointer to the node at the head of the name list.
+//
 BaseballCardNode* BaseballCardBraidedList::getNameHead()
 {
     return this->nameHead;
 }
 
+//
+// Returns a pointer to the node at the head of the year list.
+//
+// @precondition none
+// @postcondition none
+// @return a pointer to the node at the head of the year list.
+//
 BaseballCardNode* BaseballCardBraidedList::getYearHead()
 {
     return this->yearHead;
 }
 
+//
+// Returns a pointer to the node at the head of the condition list.
+//
+// @precondition none
+// @postcondition none
+// @return a pointer to the node at the head of the condition list.
+//
 BaseballCardNode* BaseballCardBraidedList::getConditionHead()
 {
     return this->conditionHead;
 }
 
+//
+// Deletes a BaseballCardNode from the braided list.
+//
+// @precondition none
+// @postcondition node is removed from the braided list.
+//
 void BaseballCardBraidedList::deleteNode(BaseballCardNode& node)
 {
     BaseballCardNode* prevName = this->findPreviousInNameList(node, *this->nameHead);
@@ -213,7 +268,7 @@ BaseballCardNode* BaseballCardBraidedList::findPreviousInNameList(BaseballCardNo
     return previous;
 }
 
-BaseballCardNode* BaseballCardBraidedList::findPreviousInYearList(BaseballCardNode& node, BaseballCardNode& current)
+BaseballCardNode* BaseballCardBraidedList::findPreviousInYearList(BaseballCardNode& node, BaseballCardNode& current) //TODO: Investigate optimizing this algorithm
 {
     BaseballCardNode* previous = nullptr;
     if(this->yearHead == &node)
@@ -250,7 +305,10 @@ BaseballCardNode* BaseballCardBraidedList::findPreviousInConditionList(BaseballC
     }
     return previous;
 }
-
+//
+// private
+// Destroys all cards in the braided list on delete of Braidedlist
+//
 void BaseballCardBraidedList::deleteAllCards(BaseballCardNode* current)
 {
     if(current != nullptr)
@@ -265,6 +323,10 @@ void BaseballCardBraidedList::deleteAllCards(BaseballCardNode* current)
 BaseballCardBraidedList::~BaseballCardBraidedList()
 {
     this->deleteAllCards(this->nameHead);
+
+    this->nameHead = nullptr;
+    this->yearHead = nullptr;
+    this->conditionHead = nullptr;
 }
 }
 

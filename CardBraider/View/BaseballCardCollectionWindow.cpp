@@ -211,6 +211,7 @@ void BaseballCardCollectionWindow::cbSave(Fl_Widget* widget, void* data)
 {
     BaseballCardCollectionWindow* window = (BaseballCardCollectionWindow*)data;
     window->promptUserForFilename(Fl_File_Chooser::CREATE, "Card file to save to");
+    window->outputController->saveCardsToCsv(window->getFilename());
 #ifdef DIAGNOSTIC_OUTPUT
     cout << "Filename selected: " << window->getFilename() << endl;
 #endif
@@ -237,6 +238,8 @@ void BaseballCardCollectionWindow::cbAddCard(Fl_Widget* widget, void* data)
     {
         Fl::wait();
     }
+    window->outputController->setBaseballCards(*window->inputController->getBaseballCardsBraidedList());
+    window->deleteCardController->setBaseballCards(*window->inputController->getBaseballCardsBraidedList());
 
     window->setSummaryText(window->outputController->getSummaryText(window->sortOrderSelection));
 }

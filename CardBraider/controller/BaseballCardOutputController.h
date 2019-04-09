@@ -22,6 +22,7 @@ private:
     const int YEAR_DSC = 3;
     const int CONDITION_ASC = 4;
     const int CONDITION_DSC = 5;
+    FileWriter* fileWriter;
     BaseballCardBraidedList* baseballCards;
     const string& getOutputByNameAscending(string& output, BaseballCardNode& currentNode) const;
     const string& getOutputByNameDescending(string& output, BaseballCardNode& currentNode) const;
@@ -31,8 +32,7 @@ private:
     const string& getOutputByConditionDescending(string& output, BaseballCardNode& currentNode) const;
     string formatCardData(BaseballCardNode& baseballCard) const;
     string formatCardDataCsv(BaseballCardNode& baseballCard) const;
-    const string& getBaseballCardsCsv();
-    FileWriter fileWriter;
+    string getBaseballCardsCsv(string& baseballCardCsv, BaseballCardNode& current);
 
 public:
     BaseballCardOutputController();

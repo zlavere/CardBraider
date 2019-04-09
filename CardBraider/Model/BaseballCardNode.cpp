@@ -67,36 +67,85 @@ int BaseballCardNode::getYear() const
     return this->nodeReference->getYear();
 }
 
+//
+// BaseballCardNode referenced as the next in the name linked list.
+//
+// @precondition none
+// @postcondition none
+// @return pointer to the BaseballCardNode referenced as the next in the name linked list.
+//
 BaseballCardNode* BaseballCardNode::getNextName() const
 {
     return this->nextName;
 }
 
+//
+// BaseballCardNode referenced as the next in the year linked list.
+//
+// @precondition none
+// @postcondition none
+// @return pointer to the BaseballCardNode referenced as the next in the year linked list.
+//
 BaseballCardNode* BaseballCardNode::getNextYear() const
 {
     return this->nextYear;
 }
 
+//
+// BaseballCardNode referenced as the next in the condition linked list.
+//
+// @precondition none
+// @postcondition none
+// @return pointer to the BaseballCardNode referenced as the next in the condition linked list.
+//
 BaseballCardNode* BaseballCardNode::getNextCondition() const
 {
     return this->nextCondition;
 }
 
+//
+// Returns the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return pointer to the baseballCard referenced by this node.
+//
 BaseballCard* BaseballCardNode::getNodeReference() const
 {
     return this->nodeReference;
 }
 
+//
+// Sets the next link in the name linked list braid
+//
+// @param baseballCard to be assigned as the next node.
+// @precondition none
+// @postcondition The node has been set to the next node following this node in the linked list braid for name
+//
 void BaseballCardNode::setNextName(BaseballCardNode& baseballCard)
 {
     this->nextName = &baseballCard;
 }
 
+//
+// Sets the next link in the year linked list braid
+//
+// @param baseballCard to be assigned as the next node.
+// @precondition none
+// @postcondition The node has been set to the next node following this node in the linked list braid for year
+//
 void BaseballCardNode::setNextYear(BaseballCardNode& baseballCard)
 {
     this->nextYear = &baseballCard;
 }
 
+//
+// Sets the next link in the condition linked list braid
+//
+// @param baseballCard to be assigned as the next node.
+// @precondition none
+// @postcondition The node has been set to the next node following this node in the linked list braid for condtion
+//
 void BaseballCardNode::setNextCondition(BaseballCardNode& baseballCard)
 {
     this->nextCondition = &baseballCard;

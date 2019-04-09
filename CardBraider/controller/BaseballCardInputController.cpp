@@ -41,6 +41,11 @@ void BaseballCardInputController::addCardFromInput(vector<string> data)
 
 BaseballCardNode* BaseballCardInputController::createNode(vector<string> data)
 {
+    if(this->baseballCards == nullptr)
+    {
+        this->baseballCards = new BaseballCardBraidedList();
+    }
+
     string firstName = data[this->FIRST_NAME_INDEX];
     string lastName = data[this->LAST_NAME_INDEX];
     int year = toInt(data[this->YEAR_INDEX], "Invalid year from file import.");

@@ -28,7 +28,6 @@ public:
     BaseballCardNode* getNameHead();
     BaseballCardNode* getYearHead();
     BaseballCardNode* getConditionHead();
-    BaseballCardNode* getTail();
     void setNameHead(BaseballCardNode& newNode);
     void setYearHead(BaseballCardNode& newNode);
     void setConditionHead(BaseballCardNode& newNode);

@@ -53,6 +53,8 @@
 		<Unit filename="controller/DeleteCardController.h" />
 		<Unit filename="io/FileReader.cpp" />
 		<Unit filename="io/FileReader.h" />
+		<Unit filename="io/FileWriter.cpp" />
+		<Unit filename="io/FileWriter.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="notes.txt" />
 		<Extensions>

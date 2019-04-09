@@ -1,3 +1,4 @@
+#define DIAGNOSTIC_OUTPUT
 #include "BaseballCardOutputController.h"
 #include "Utils.h"
 
@@ -12,6 +13,7 @@ namespace controller
 {
 BaseballCardOutputController::BaseballCardOutputController()
 {
+    this->fileWriter = new FileWriter();
     //ctor
 }
 
@@ -140,27 +142,36 @@ string BaseballCardOutputController::formatCardDataCsv(BaseballCardNode& basebal
                            to_string(baseballCard.getYear()) + "," +
                            baseballCard.getConditionDescription() + "," +
                            to_string(baseballCard.getPrice());
+    return formattedData;
 }
 
-const string& BaseballCardOutputController::getBaseballCardsCsv()
+string BaseballCardOutputController::getBaseballCardsCsv(string& baseballCardCsv, BaseballCardNode& current)
 {
-    string baseballCardCsv;
-    BaseballCardNode& current = *this->baseballCards->getNameHead();
-    baseballCardCsv = this->formatCardDataCsv(current);
-    do
+    baseballCardCsv += this->formatCardDataCsv(current) + "\n";
+
+    if(current.getNextName() != nullptr)
     {
-        baseballCardCsv += "\n" + this->formatCardDataCsv(*current.getNextName());
-        current = *current.getNextName();
+        this->getBaseballCardsCsv(baseballCardCsv, *current.getNextName());
     }
-    while(current.getNextName() != nullptr);
 
     return baseballCardCsv;
 }
 
 void BaseballCardOutputController::saveCardsToCsv(const string& fileName)
 {
-    this->fileWriter.setOutputFile(fileName);
-    this->fileWriter.writeDataToFile(this->getBaseballCardsCsv());
+try{
+this->fileWriter->setOutputFile(fileName);
+    #ifdef DIAGNOSTIC_OUTPUT
+        cout << fileName << endl;
+    #endif
+    string* baseballCardsCsv = new string;
+    this->fileWriter->writeDataToFile(this->getBaseballCardsCsv(*baseballCardsCsv, *this->baseballCards->getNameHead()));
+}
+catch (std::bad_alloc & ba)
+{
+    cout << "bad_alloc caught: " << ba.what();
+}
+
 }
 
 void BaseballCardOutputController::setBaseballCards(BaseballCardBraidedList& baseballCards)
