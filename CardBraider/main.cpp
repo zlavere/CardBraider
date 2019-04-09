@@ -6,7 +6,7 @@ using namespace view;
 
 int main (int argc, char ** argv)
 {
-    BaseballCardCollectionWindow mainWindow(540, 375, "A3: CardBraider by Zachary LaVere");
+    BaseballCardCollectionWindow mainWindow(540, 375, "Zachary LaVere's Baseball Card Collection");
     mainWindow.show();
 
     int exitCode = Fl::run();

@@ -1,6 +1,7 @@
 #include "FileWriter.h"
 
-namespace io {
+namespace io
+{
 //
 // Writes to a file
 //

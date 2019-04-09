@@ -5,16 +5,17 @@
 #include <fstream>
 using namespace std;
 
-namespace io {
+namespace io
+{
 class FileWriter
 {
-    private:
+private:
     string fileName;
-    public:
-        FileWriter();
-        virtual ~FileWriter();
-        void setOutputFile(const string& fileName);
-        void writeDataToFile(const string& data);
+public:
+    FileWriter();
+    virtual ~FileWriter();
+    void setOutputFile(const string& fileName);
+    void writeDataToFile(const string& data);
 };
 }
 #endif // FILEWRITER_H

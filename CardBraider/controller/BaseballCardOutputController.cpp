@@ -152,9 +152,9 @@ string BaseballCardOutputController::formatCardData(BaseballCardNode& baseballCa
 //
 void BaseballCardOutputController::saveCardsToCsv(const string& fileName)
 {
-        this->fileWriter->setOutputFile(fileName);
-        string* baseballCardsCsv = new string;
-        this->fileWriter->writeDataToFile(this->getBaseballCardsCsv(*baseballCardsCsv, *this->baseballCards->getNameHead()));
+    this->fileWriter->setOutputFile(fileName);
+    string* baseballCardsCsv = new string;
+    this->fileWriter->writeDataToFile(this->getBaseballCardsCsv(*baseballCardsCsv, *this->baseballCards->getNameHead()));
 }
 
 string BaseballCardOutputController::formatCardDataCsv(BaseballCardNode& baseballCard) const

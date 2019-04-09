@@ -174,8 +174,8 @@ void BaseballCardBraidedList::insertIntoConditionList(BaseballCardNode& newNode,
     {
         if(&currentNode == this->conditionHead)
         {
-                newNode.setNextCondition(currentNode);
-                this->conditionHead = &newNode;
+            newNode.setNextCondition(currentNode);
+            this->conditionHead = &newNode;
         }
         else
         {
