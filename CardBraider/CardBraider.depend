@@ -17,7 +17,7 @@
 	"BaseballCardOutputController.h"
 	"DeleteCardController.h"
 
-1553455815 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.cpp
+1554781607 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.cpp
 	"BaseballCard.h"
 
 1553998680 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCard.h
@@ -90,14 +90,14 @@
 	"io/FileReader.h"
 	"Model/BaseballCardBraidedList.h"
 
-1554692729 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
+1554782626 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.cpp
 	"BaseballCardBraidedList.h"
 	"Utils.h"
 
 1554780760 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardBraidedList.h
 	"BaseballCardNode.h"
 
-1554682425 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.cpp
+1554782547 source:/home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.cpp
 	"BaseballCardNode.h"
 
 1554682432 /home/zach/ssd/CardBraider/CardBraider/Model/BaseballCardNode.h

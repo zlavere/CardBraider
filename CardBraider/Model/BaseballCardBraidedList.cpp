@@ -4,6 +4,9 @@ using namespace model;
 
 namespace model
 {
+//
+// Handles logic for braiding a list of BaseballCardNode(s) as well as references to the heads of each braid.
+//
 BaseballCardBraidedList::BaseballCardBraidedList()
 {
     this->nameHead = nullptr;

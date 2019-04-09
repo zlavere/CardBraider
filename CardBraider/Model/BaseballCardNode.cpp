@@ -2,6 +2,9 @@
 
 namespace model
 {
+//
+// Represents a link node in a braided list by a referenced BaseballCard's player's last name, publication year, and condition
+//
 BaseballCardNode::BaseballCardNode(BaseballCard& nodeReference)
 {
     this->nodeReference = &nodeReference;
@@ -10,21 +13,48 @@ BaseballCardNode::BaseballCardNode(BaseballCard& nodeReference)
     this->nextCondition = nullptr;
 }
 
+//
+// Gets a string representation of the first name of the BaseballCard's player for the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return string representation of the first name of the BaseballCard's player.
+//
 const string& BaseballCardNode::getFirstName() const
 {
     return this->nodeReference->getFirstName();
 }
-
+//
+// Gets a string representation of the last name of the BaseballCard's player for the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return string representation of the last name of the BaseballCard's player.
+//
 const string& BaseballCardNode::getLastName() const
 {
     return this->nodeReference->getLastName();
 }
 
+//
+// Gets a integer representation of the Condition of the BaseballCard based on BaseballCard::Condition enum for the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return integer representation / description of the Condition of the BaseballCard
+//
 const int BaseballCardNode::getConditionValue() const
 {
     return this->nodeReference->getCondition();
 }
 
+//
+// Gets a string representation of the Condition of the BaseballCard based on BaseballCard::Condition enum for the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return string representation / description of the Condition of the BaseballCard
+//
 const string& BaseballCardNode::getConditionDescription() const
 {
     int condition = this->nodeReference->getCondition();
@@ -57,11 +87,25 @@ const string& BaseballCardNode::getConditionDescription() const
     return *conditionDescription;
 }
 
+//
+// Gets an integer representation of the value of the BaseballCard in whole dollar amounts for the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return integer representation of the value of the BaseballCard in whole dollar amounts.
+//
 int BaseballCardNode::getPrice() const
 {
     return this->nodeReference->getPrice();
 }
 
+//
+// Gets an integer representation of the year the BaseballCard was published for the BaseballCard referenced by this node.
+//
+// @precondition none
+// @postcondition none
+// @return integer representation of the year the BaseballCard was published.
+//
 int BaseballCardNode::getYear() const
 {
     return this->nodeReference->getYear();

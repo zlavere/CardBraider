@@ -5,11 +5,22 @@
 
 namespace controller
 {
+//
+// Handles input into the Baseball Card collection
+// from User and File input
+//
 BaseballCardInputController::BaseballCardInputController()
 {
     this->baseballCards = nullptr;
 }
 
+//
+// Imports a Baseball Card Collection from a file into the BaseballCardBraidedList
+//
+// @param fileName the file name from which to import the collection.
+// @precondition none
+// @postcondition File is parsed and the braided list is created from the contents of the file.
+//
 void BaseballCardInputController::importCardsFromFile(const string& fileName)
 {
     if(this->baseballCards != nullptr)
@@ -29,6 +40,13 @@ void BaseballCardInputController::importCardsFromFile(const string& fileName)
     }
 }
 
+//
+// Imports a Baseball Card from user input into the BaseballCardBraidedList
+//
+// @param data the user input from which a BaseballCard can be created
+// @precondition none
+// @postcondition User input is parsed and baseball card is created and added to the BraidedList
+//
 void BaseballCardInputController::addCardFromInput(vector<string> data)
 {
     if(this->baseballCards == nullptr)
@@ -48,9 +66,9 @@ BaseballCardNode* BaseballCardInputController::createNode(vector<string> data)
 
     string firstName = data[this->FIRST_NAME_INDEX];
     string lastName = data[this->LAST_NAME_INDEX];
-    int year = toInt(data[this->YEAR_INDEX], "Invalid year from file import.");
+    int year = toInt(data[this->YEAR_INDEX], "Invalid year.");
     BaseballCard::Condition condition = this->parseCondition(data[this->CONDITION_INDEX]);
-    int price = toInt(data[this->PRICE_INDEX], "Invalid price from file import.");
+    int price = toInt(data[this->PRICE_INDEX], "Invalid price.");
     BaseballCard* newCard = new BaseballCard(firstName, lastName, year, condition, price);
     BaseballCardNode* newNode = new BaseballCardNode(*newCard);
 
@@ -89,6 +107,11 @@ BaseballCard::Condition BaseballCardInputController::parseCondition(const string
     return result;
 }
 
+//
+// Gets the BaseballCardBraidedList
+//
+// @return the BaseballCardBraidedList
+//
 BaseballCardBraidedList* BaseballCardInputController::getBaseballCardsBraidedList()
 {
     return this->baseballCards;

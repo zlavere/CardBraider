@@ -2,15 +2,21 @@
 #include "FileReader.h"
 
 #include <sstream>
-#include<algorithm>
-#include<iterator>
+
 namespace io
 {
+//
+// Reads in a file in CSV file cointaing data for a Baseball Card Collection
+//
 FileReader::FileReader()
 {
     //ctor
 }
-
+//
+// Sets the file name from which the file reader will read.
+//
+// @param fileName from which to read in files.
+//
 void FileReader::setFileName(const string& fileName)
 {
     this->fileName = fileName;
@@ -59,6 +65,11 @@ void FileReader::parseFileLines()
     }
 }
 
+//
+// Reads in and parses file lines from a file, such that each attribute of a BaseballCard is in the collection.
+//
+// @return Collection of strings where each item attribute from a line from the file
+//
 vector<vector<string>> FileReader::getData()
 {
     this->data.clear();
